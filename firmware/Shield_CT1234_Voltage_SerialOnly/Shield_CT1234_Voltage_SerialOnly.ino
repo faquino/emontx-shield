@@ -22,7 +22,7 @@
 // Create  instances for each CT channel
 EnergyMonitor cts[4];
 //EnergyMonitor ct1, ct2, ct3, ct4;
-bool ctMap[4] = { true, true, true, true };
+bool ctMap[4] = { true, true, true, false };
 char *ctMsgs[4] = { "CT1:", ",CT2:", ",CT3:", ",CT4:" };
 
 // On-board emonTx LED
@@ -71,7 +71,9 @@ void setup()
     Serial.println("emonTX Shield CT123 Voltage - EmonESP");
     Serial.println("OpenEnergyMonitor.org");
     Serial.print("CT count: ");
-    Serial.println(ctCount);
+    Serial.print(ctCount);
+    Serial.print("; cycles: ");
+    Serial.println(cycles);
   }
 
   // Calibration factor = CT ratio / burden resistance = (100A / 0.05A) / 33 Ohms = 60.606
